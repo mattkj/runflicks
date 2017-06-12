@@ -8,19 +8,13 @@ export async function search(maxResults = '3', q = '', type = 'video'){
     });
     console.log('GAPI Initialized.');
 
-    const response = await gapi.client.youtube.search.list({
+    return await gapi.client.youtube.search.list({
       maxResults,
       part: 'snippet',
       q,
       type
     });
-    
-    response.result.items.forEach((item) => {
-        console.group();
-        console.log(item.id.videoId);
-        console.log(item.snippet);
-        console.groupEnd();
-      });    
+        
   } catch (error) {
       console.warn('Error: ' + error);
   }
