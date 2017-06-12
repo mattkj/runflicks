@@ -2,6 +2,16 @@ body {
   font-family: sans-serif;
 }
 
+.content {
+  text-align: center;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
 .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;

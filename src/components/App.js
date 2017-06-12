@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import {search} from './youtube';
-import './App.css';
+import {search} from '../utils/gapi';
 
 class App extends Component {
   constructor(){
@@ -14,6 +12,7 @@ class App extends Component {
 
   async componentDidMount(){
     const videos = await search('3', 'trail running', 'video');
+    // const videos = await getVideo('zwGqJOONw1g');
     this.setState({
       videos: videos.result.items,
       loading: false
@@ -26,14 +25,14 @@ class App extends Component {
     const loading = this.state.loading;
 
     if (loading === true) {
-      content = 'Loading'
+      content = 'Loading videos...'
     } else {
       content = videos.map(item => {
         return (
           <div key={item.id.videoId}>
             <h3>{item.snippet.title}</h3>
             <div className='video-responsive'>
-              <iframe width="640" height="360" src={`https://www.youtube.com/embed/${item.id.videoId}`} frameborder="0" allowfullscreen></iframe>
+              <iframe width="640" height="360" src={`https://www.youtube.com/embed/${item.id.videoId}`} title={item.snippet.title} frameBorder="0" allowFullScreen></iframe>
             </div>
           </div>
         )
@@ -41,14 +40,8 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="App-intro">
-          {content}
-        </div>
+      <div className="content">
+        {content}
       </div>
     );
   }
