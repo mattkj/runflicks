@@ -2,8 +2,9 @@
 
 ## Todo
 
-- link thumbnails to video page
 - add functions for accessing Google Sheets api
+- add video filters
+- use CSS grid layout
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
