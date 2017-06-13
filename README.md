@@ -2,7 +2,6 @@
 
 ## Todo
 
-- add React Router
 - link thumbnails to video page
 - add functions for accessing Google Sheets api
 
