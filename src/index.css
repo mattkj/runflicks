@@ -2,6 +2,10 @@ body {
   font-family: sans-serif;
 }
 
+.active{
+  font-weight: bold;
+}
+
 .content {
   text-align: center;
   font-size: large;

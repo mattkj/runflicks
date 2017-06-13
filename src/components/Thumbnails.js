@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Thumbnails({title, src}) {
   return(
@@ -8,5 +9,10 @@ function Thumbnails({title, src}) {
     </div>
   )
 }
+
+Thumbnails.propTypes = {
+  title: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired
+};
 
 export default Thumbnails;
