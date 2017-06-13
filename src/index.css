@@ -12,6 +12,10 @@ body {
   max-width: 800px;
 }
 
+.content img{
+  max-width: 100%;
+}
+
 .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;

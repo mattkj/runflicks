@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import {youTube} from '../utils/gapi';
 import Loading from './Loading';
+import Thumbnails from './Thumbnails';
+// import EmbedVideo from './EmbedVideo';
+
+const videoIds = ['Ks-_Mh1QhMc','c0KYU2j0TM4','eIho2S0ZahI'];
 
 class App extends Component {
   constructor(){
@@ -12,8 +16,8 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    const videos = await youTube.search('3', 'trail running', 'video');
-    // const videos = await getVideo('zwGqJOONw1g');
+    // const videos = await youTube.search('3', 'trail running', 'video');
+    const videos = await youTube.getVideos(videoIds.join());
     this.setState({
       videos: videos.result.items,
       loading: false
@@ -22,21 +26,23 @@ class App extends Component {
   
   render() {
     let content;
-    const videos = this.state.videos;
+    const videoResults = this.state.videos;
     const loading = this.state.loading;
 
     if (loading === true) {
       return <Loading />
     } else {
-      content = videos.map(item => {
-        return (
-          <div key={item.id.videoId}>
-            <h3>{item.snippet.title}</h3>
-            <div className='video-responsive'>
-              <iframe width="640" height="360" src={`https://www.youtube.com/embed/${item.id.videoId}`} title={item.snippet.title} frameBorder="0" allowFullScreen></iframe>
-            </div>
-          </div>
-        )
+      content = videoResults.map(item => {
+        return <Thumbnails 
+                  key={item.id}
+                  title={item.snippet.title} 
+                  src={item.snippet.thumbnails.maxres.url} 
+                />
+        // return  <EmbedVideo 
+        //           key={item.id}
+        //           id={item.id}
+        //           title={item.snippet.title} 
+        //         />
       });
     }
 

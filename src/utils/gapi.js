@@ -28,7 +28,7 @@ export const youTube = {
         console.warn('Error: ' + error);
     }
   },
-  async getVideo(id = ''){
+  async getVideos(id = []){
     console.log(id);
     try {
       await init();
