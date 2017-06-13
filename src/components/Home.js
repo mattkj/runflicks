@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {youTube} from '../utils/gapi';
 import Loading from './Loading';
 import Thumbnails from './Thumbnails';
-// import EmbedVideo from './EmbedVideo';
 
 const videoIds = ['VyNWVdExM24','A66ierfTCUQ','8DoARSlv-HU'];
 
@@ -36,6 +35,7 @@ class Home extends Component {
         let src = (item.snippet.thumbnails.maxres ? item.snippet.thumbnails.maxres.url : item.snippet.thumbnails.medium.url);
         return <Thumbnails 
                   key={item.id}
+                  id={item.id}
                   title={item.snippet.title} 
                   src={src} 
                 />
