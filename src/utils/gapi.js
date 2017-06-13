@@ -13,30 +13,31 @@ async function init(){
   }
 }
 
-export async function search(maxResults = '3', q = '', type = 'video'){
-  console.log(maxResults, q, type);
-  try {
-    await init();
-    return await gapi.client.youtube.search.list({
-      maxResults,
-      part: 'snippet',
-      q,
-      type
-    });   
-  } catch (error) {
-      console.warn('Error: ' + error);
-  }
-}
-
-export async function getVideo(id = ''){
-  console.log(id);
-  try {
-    await init();
-    return await gapi.client.youtube.videos.list({
-      id,
-      part: 'snippet'
-    });   
-  } catch (error) {
-      console.warn('Error: ' + error);
+export const youTube = {
+  async search(maxResults = '3', q = '', type = 'video'){
+    console.log(maxResults, q, type);
+    try {
+      await init();
+      return await gapi.client.youtube.search.list({
+        maxResults,
+        part: 'snippet',
+        q,
+        type
+      });   
+    } catch (error) {
+        console.warn('Error: ' + error);
+    }
+  },
+  async getVideo(id = ''){
+    console.log(id);
+    try {
+      await init();
+      return await gapi.client.youtube.videos.list({
+        id,
+        part: 'snippet'
+      });   
+    } catch (error) {
+        console.warn('Error: ' + error);
+    }
   }
 }

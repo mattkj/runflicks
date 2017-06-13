@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {search} from '../utils/gapi';
+import {youTube} from '../utils/gapi';
+import Loading from './Loading';
 
 class App extends Component {
   constructor(){
@@ -11,7 +12,7 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    const videos = await search('3', 'trail running', 'video');
+    const videos = await youTube.search('3', 'trail running', 'video');
     // const videos = await getVideo('zwGqJOONw1g');
     this.setState({
       videos: videos.result.items,
@@ -25,7 +26,7 @@ class App extends Component {
     const loading = this.state.loading;
 
     if (loading === true) {
-      content = 'Loading videos...'
+      return <Loading />
     } else {
       content = videos.map(item => {
         return (

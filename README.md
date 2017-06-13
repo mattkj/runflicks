@@ -4,7 +4,6 @@
 
 - make components for thumbnails, embedded video
 - add functions for accessing Google Sheets api
-- change gapi functions into object methods (eg. youtube.search)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
