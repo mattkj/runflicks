@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {data} from '../data';
 
 const Filters = ({filterVideos}) => {
   return(
     <div className='filters'>
-      <button data-filter='allVids' onClick={() => filterVideos('allVids', data.allVids.videos)}>Show All</button>
-      <button data-filter='costanzaVids' onClick={() => filterVideos('costanzaVids', data.costanzaVids.videos)}>Costanza Filter</button>
-      <button data-filter='kramerVids' onClick={() => filterVideos('kramerVids', data.kramerVids.videos)}>Kramer Filter</button>
+      <button data-filter='allVids' onClick={() => filterVideos('allVids')}>Show All</button>
+      <button data-filter='is4K' onClick={() => filterVideos('is4K')}>4K Only</button>
+      <button data-filter='is8K' onClick={() => filterVideos('is8K')}>8K Only</button>
     </div>
   )
 }

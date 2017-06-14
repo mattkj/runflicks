@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Thumbnails from './Thumbnails';
 import Filters from './Filters';
-import {data} from '../data';
 
 class Home extends Component {
   componentDidMount(){
     const filter = this.props.currentFilter;
-    this.props.filterVideos(this.props.currentFilter, data[filter].videos);
+    this.props.filterVideos(this.props.currentFilter);
     this.highlightCurrentFilter();
   }
 
@@ -18,7 +17,6 @@ class Home extends Component {
 
   highlightCurrentFilter(){
     const buttons = document.querySelectorAll('.filters > button');
-    console.log(buttons);
     buttons.forEach(button => {
       button.classList.remove('active');
       if (button.dataset.filter === this.props.currentFilter){
