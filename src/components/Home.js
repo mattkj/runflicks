@@ -3,9 +3,17 @@ import {youTube} from '../utils/gapi';
 import Loading from './Loading';
 import Thumbnails from './Thumbnails';
 
-const allVids = ['VyNWVdExM24','A66ierfTCUQ','8DoARSlv-HU'];
-const costanzaVids = ['A66ierfTCUQ','8DoARSlv-HU'];
-const kramerVids = ['VyNWVdExM24'];
+const allVids = [
+  'https://www.youtube.com/watch?v=yg-TqEFYcfM',
+  'https://www.youtube.com/watch?v=jTi7VtrLL0k'
+];
+const costanzaVids = [
+  'https://www.youtube.com/watch?v=A66ierfTCUQ',
+  'https://www.youtube.com/watch?v=8DoARSlv-HU'
+];
+const kramerVids = [
+  'https://www.youtube.com/watch?v=VyNWVdExM24'
+];
 
 class Home extends Component {
   constructor(){
@@ -18,7 +26,7 @@ class Home extends Component {
 
   async componentDidMount(){
     // const videos = await youTube.search('3', 'trail running', 'video');
-    const videos = await youTube.getVideos(allVids.join());
+    const videos = await youTube.getVideos(allVids);
     this.setState({
       videos: videos.result.items,
       loading: false
@@ -26,7 +34,7 @@ class Home extends Component {
   }
 
   async filterVideos(ids){
-    const videos = await youTube.getVideos(ids.join());
+    const videos = await youTube.getVideos(ids);
     this.setState({
       videos: videos.result.items,
     });

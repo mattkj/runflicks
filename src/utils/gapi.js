@@ -28,8 +28,11 @@ export const youTube = {
         console.warn('Error: ' + error);
     }
   },
-  async getVideos(id = []){
-    console.log(id);
+  async getVideos(urls){
+    const id = urls.map(item => {
+       return item.substring(item.indexOf("?v=") + 3);
+    }).join();
+
     try {
       await init();
       return await gapi.client.youtube.videos.list({
