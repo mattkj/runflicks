@@ -16,10 +16,24 @@ const kramerVids = [
 
 class Home extends Component {
   componentDidMount(){
-    if(this.props.videos === ''){
-      this.props.filterVideos(allVids);
-    }
+    this.props.filterVideos(this.props.currentFilter, eval(this.props.currentFilter));
+    this.currentFilter();
   }
+
+  componentDidUpdate(){
+    this.currentFilter();
+  }
+
+  currentFilter(){
+    const buttons = document.querySelectorAll('.content > button');
+    buttons.forEach(button => {
+      button.classList.remove('active');
+      if (button.dataset.filter === this.props.currentFilter){
+        button.classList.add('active');
+      }
+    });
+  }
+
   render() {
     let content;
     const videoResults = this.props.videos;
@@ -43,9 +57,9 @@ class Home extends Component {
     return (
       <div className="content">
         <h1>Home</h1>
-        <button onClick={() => this.props.filterVideos(allVids)}>Show All</button>
-        <button onClick={() => this.props.filterVideos(costanzaVids)}>Costanza Filter</button>
-        <button onClick={() => this.props.filterVideos(kramerVids)}>Kramer Filter</button>
+        <button data-filter='allVids' onClick={() => this.props.filterVideos('allVids', allVids)}>Show All</button>
+        <button data-filter='costanzaVids' onClick={() => this.props.filterVideos('costanzaVids', costanzaVids)}>Costanza Filter</button>
+        <button data-filter='kramerVids' onClick={() => this.props.filterVideos('kramerVids', kramerVids)}>Kramer Filter</button>
         {content}
       </div>
     );

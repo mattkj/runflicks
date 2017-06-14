@@ -11,15 +11,17 @@ class App extends Component {
     this.state = {
       videos: '',
       loading: true,
+      currentFilter: 'allVids'
     }
     this.filterVideos = this.filterVideos.bind(this);
   }
 
-  async filterVideos(ids){
+  async filterVideos(filter, ids){
     const videos = await youTube.getVideos(ids);
     this.setState({
       videos: videos.result.items,
       loading: false,
+      currentFilter: filter
     });
   }
 
@@ -31,7 +33,7 @@ class App extends Component {
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
           </ul>
-          <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} />} />
+          <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
           <Route path='/about' component={About} />
           <Route path='/video/:id' component={Video} />
         </div>
