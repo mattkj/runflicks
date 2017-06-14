@@ -1,21 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import {youTube} from '../utils/gapi';
 import Home from './Home';
 import About from './About';
 import Video from './Video';
-
-const allVids = [
-  'https://www.youtube.com/watch?v=yg-TqEFYcfM',
-  'https://www.youtube.com/watch?v=jTi7VtrLL0k'
-];
-const costanzaVids = [
-  'https://www.youtube.com/watch?v=A66ierfTCUQ',
-  'https://www.youtube.com/watch?v=8DoARSlv-HU'
-];
-const kramerVids = [
-  'https://www.youtube.com/watch?v=VyNWVdExM24'
-];
 
 class App extends Component {
   constructor(){
@@ -24,6 +12,7 @@ class App extends Component {
       videos: '',
       loading: true,
     }
+    this.filterVideos = this.filterVideos.bind(this);
   }
 
   async filterVideos(ids){
@@ -42,7 +31,7 @@ class App extends Component {
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
           </ul>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} />} />
           <Route path='/about' component={About} />
           <Route path='/video/:id' component={Video} />
         </div>
