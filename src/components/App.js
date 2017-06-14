@@ -9,7 +9,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      videos: '',
+      videos: [],
       loading: true,
       currentFilter: 'allVids'
     }
