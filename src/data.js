@@ -1,19 +1,22 @@
 export const data = {
-  allVids: {
-    videos: [
-      'https://www.youtube.com/watch?v=yg-TqEFYcfM',
-      'https://www.youtube.com/watch?v=jTi7VtrLL0k'
-    ]
-  },
-  costanzaVids: {
-    videos: [
-      'https://www.youtube.com/watch?v=A66ierfTCUQ',
-      'https://www.youtube.com/watch?v=8DoARSlv-HU'
-    ]
-  },
-  kramerVids: {
-    videos: [
-      'https://www.youtube.com/watch?v=VyNWVdExM24'
-    ]
-  }
+  videos: [
+    {
+      title: 'NEW ZEALAND ASCENDING | 8K TIMELAPSE',
+      url: 'https://www.youtube.com/watch?v=U-6wqFE79Gc',
+      is4K: false,
+      is8K: true
+    },
+    {
+      title: 'WINTER | DOLOMITES 4K TIMELAPSE',
+      url: 'https://www.youtube.com/watch?v=pzoRKYX9gf0',
+      is4K: true,
+      is8K: false
+    },
+    {
+      title: 'NORWAY 8K',
+      url: 'https://www.youtube.com/watch?v=QPdWJeybMo8',
+      is4K: false,
+      is8K: true
+    },
+  ]
 };
