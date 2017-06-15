@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import {youTube} from '../utils/gapi';
-import {data} from '../data';
+import {data, defaultFilter} from '../data';
 import Home from './Home';
 import About from './About';
 import Video from './Video';
@@ -12,15 +12,15 @@ class App extends Component {
     this.state = {
       videos: [],
       loading: true,
-      currentFilter: 'allVids'
+      currentFilter: defaultFilter
     }
     this.filterVideos = this.filterVideos.bind(this);
   }
 
   async filterVideos(filter){
     let videos = data;
-    if (filter !== 'allVids'){
-      videos = videos.filter(video => (video[filter] === true));
+    if (filter !== defaultFilter){
+      videos = videos.filter(video => video.tags.includes(filter));
     }
     videos = videos.map(video => {
       return video.url.substring(video.url.indexOf("?v=") + 3);

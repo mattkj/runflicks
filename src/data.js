@@ -2,19 +2,25 @@ export const data = [
   {
     title: 'NEW ZEALAND ASCENDING | 8K TIMELAPSE',
     url: 'https://www.youtube.com/watch?v=U-6wqFE79Gc',
-    is4K: false,
-    is8K: true
+    tags: ['8K Only', 'Featured']
   },
   {
     title: 'WINTER | DOLOMITES 4K TIMELAPSE',
     url: 'https://www.youtube.com/watch?v=pzoRKYX9gf0',
-    is4K: true,
-    is8K: false
+    tags: ['4K Only']
   },
   {
     title: 'NORWAY 8K',
     url: 'https://www.youtube.com/watch?v=QPdWJeybMo8',
-    is4K: false,
-    is8K: true
+    tags: ['8K Only']
   }
+];
+
+export const defaultFilter = 'Show All';
+
+export const filterList = [
+  defaultFilter,
+  '4K Only',
+  '8K Only',
+  'Featured'
 ];
