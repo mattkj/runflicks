@@ -12,25 +12,21 @@ class App extends Component {
     this.state = {
       videos: [],
       loading: true,
-      currentFilter: 'is4K'
+      currentFilter: 'allVids'
     }
     this.filterVideos = this.filterVideos.bind(this);
   }
 
   async filterVideos(filter){
-    let ids = '';
-    if (filter === 'allVids'){
-      ids = data.map(video => {
-        return video.url.substring(video.url.indexOf("?v=") + 3);
-      }).join();
-    } else {
-      ids = data.filter(video => (video[filter] === true));
-      ids = ids.map(video => {
-        return video.url.substring(video.url.indexOf("?v=") + 3);
-      }).join();
+    let videos = data;
+    if (filter !== 'allVids'){
+      videos = videos.filter(video => (video[filter] === true));
     }
+    videos = videos.map(video => {
+      return video.url.substring(video.url.indexOf("?v=") + 3);
+    }).join();
 
-    const filteredVideos = await youTube.getVideos(ids);
+    const filteredVideos = await youTube.getVideos(videos);
     this.setState({
       videos: filteredVideos.result.items,
       loading: false,

@@ -6,7 +6,6 @@ import Filters from './Filters';
 
 class Home extends Component {
   componentDidMount(){
-    const filter = this.props.currentFilter;
     this.props.filterVideos(this.props.currentFilter);
     this.highlightCurrentFilter();
   }

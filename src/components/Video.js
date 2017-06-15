@@ -9,7 +9,7 @@ function Video({match, location}) {
     <div>
       <h3>{title}</h3>
       <div className='video-responsive'>
-        <iframe width="640" height="360" src={`https://www.youtube.com/embed/${match.params.id}?rel=0&amp;showinfo=0`} title={title} frameBorder="0" allowFullScreen></iframe>
+        <iframe width="640" height="360" src={`https://www.youtube.com/embed/${match.params.id}?rel=0&showinfo=0&autoplay=1`} title={title} frameBorder="0" allowFullScreen></iframe>
       </div>
     </div>
   )
