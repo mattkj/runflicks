@@ -6,7 +6,7 @@ body {
 
 .container{
   display: grid;
-  grid-gap: 20px;
+  grid-template-rows: 100px 1fr; 
   grid-template-areas:
     "nav"
     "main";
@@ -14,17 +14,29 @@ body {
 
 nav{
   grid-area: nav;
-  background: cyan;
+  background: #547AA5;
+}
+
+nav a{
+  color: white;
 }
 
 .main{
   grid-area: main;
-  background: green;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 1fr;
   /*grid-gap: 20px;*/
   grid-template-areas:
+    "sidebar" 
+    "videos";
+}
+
+@media (min-width: 600px) {
+  .main{
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
     "sidebar videos";
+  }
 }
 
 .main img{
@@ -33,12 +45,24 @@ nav{
 
 aside{
   grid-area: sidebar;
-  background: tomato;
+  background: #4F5165;
+}
+
+.filters{
+  display: flex;
+  flex-direction: column;
+}
+
+.filters button{
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .videos{
   grid-area: videos;
-  background: pink;
+  max-width: 1280px;
 }
 
 /* COMMON */
