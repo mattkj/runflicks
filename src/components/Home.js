@@ -45,10 +45,14 @@ class Home extends Component {
     }
 
     return (
-      <div className="content">
-        <h1>Home</h1>
-        <Filters filterVideos={this.props.filterVideos}  />
-        {content}
+      <div className="main">
+        <aside>
+          <Filters filterVideos={this.props.filterVideos}  />
+        </aside>
+        <div className="videos">
+          <h1>Home</h1>
+          {content}
+        </div>
       </div>
     );
   }

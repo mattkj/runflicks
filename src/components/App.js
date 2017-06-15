@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import {youTube} from '../utils/gapi';
 import {data, defaultFilter} from '../data';
+import Nav from './Nav';
 import Home from './Home';
 import About from './About';
 import Video from './Video';
@@ -36,17 +37,14 @@ class App extends Component {
 
   render(){
     return (
-      <Router>
-        <div>
-          <ul>
-            <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-          </ul>
-          <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
-          <Route path='/about' component={About} />
-          <Route path='/video/:id' component={Video} />
-        </div>
-      </Router>
+        <Router>
+          <div className="container">
+            <Nav />
+            <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
+            <Route path='/about' component={About} />
+            <Route path='/video/:id' component={Video} />
+          </div>
+        </Router>
     );
   }
 }
