@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 function Thumbnails({id, title, src}) {
   return(
     <div>
-      <h3>{title}</h3>
-        <Link to={{
-          pathname: `/video/${id}`,
-          search: `?title=${title}`
-        }}>
-          <img src={src} alt={title} />
-        </Link>
+      <Link to={{
+        pathname: `/video/${id}`,
+        search: `?title=${title}`
+      }}>
+        <div className='thumbnail' style={{backgroundImage: `url(${src})`}}>
+          <div>{title}</div>
+        </div>
+      </Link>
     </div>
   )
 }

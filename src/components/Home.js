@@ -50,7 +50,6 @@ class Home extends Component {
           <Filters filterVideos={this.props.filterVideos}  />
         </aside>
         <div className="videos">
-          <h1>Home</h1>
           {content}
         </div>
       </div>
