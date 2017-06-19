@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {youTube} from '../utils/gapi';
 import {data, defaultFilter} from '../data';
-import Nav from './Nav';
+import Header from './Header';
 import Home from './Home';
 import About from './About';
 import Video from './Video';
@@ -39,7 +39,7 @@ class App extends Component {
     return (
         <Router>
           <div className="container">
-            <Nav />
+            <Header />
             <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
             <Route path='/about' component={About} />
             <Route path='/video/:id' component={Video} />

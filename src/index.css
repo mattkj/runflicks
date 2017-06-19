@@ -5,38 +5,23 @@ body {
 /* LAYOUT */
 
 .container{
-  display: grid;
-  grid-template-rows: 100px 1fr; 
-  grid-template-areas:
-    "nav"
-    "main";
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-nav{
-  grid-area: nav;
-  background: #547AA5;
+header{
+  background: #93ACB5;
+  height: 150px;
 }
 
-nav a{
+header a{
   color: white;
 }
 
 .main{
-  grid-area: main;
-  display: grid;
-  grid-template-columns: 1fr;
-  /*grid-gap: 20px;*/
-  grid-template-areas:
-    "sidebar" 
-    "videos";
-}
-
-@media (min-width: 600px) {
-  .main{
-    grid-template-columns: 200px 1fr;
-    grid-template-areas:
-    "sidebar videos";
-  }
+  display: flex;
+  flex: 1;
 }
 
 .main img{
@@ -44,8 +29,8 @@ nav a{
 }
 
 aside{
-  grid-area: sidebar;
-  background: #4F5165;
+  background: #3E5C76;
+  flex: 0 0 200px;
 }
 
 .filters{
@@ -61,8 +46,7 @@ aside{
 }
 
 .videos{
-  grid-area: videos;
-  max-width: 1280px;
+  flex: 1;
 }
 
 /* COMMON */
