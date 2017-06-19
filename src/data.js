@@ -1,3 +1,6 @@
+export const siteName = 'Site Name';
+export const tagline = 'This is a tagline'
+
 export const data = [
   {
     title: 'NEW ZEALAND ASCENDING | 8K TIMELAPSE',

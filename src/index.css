@@ -11,8 +11,12 @@ body {
 }
 
 header{
-  background: #93ACB5;
+  background: #3E5C76;
   height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header a{
@@ -29,11 +33,12 @@ header a{
 }
 
 aside{
-  background: #3E5C76;
+  background: #93ACB5;
   flex: 0 0 200px;
 }
 
 .filters{
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
 }
@@ -47,6 +52,7 @@ aside{
 
 .videos{
   flex: 1;
+  padding: 20px;
 }
 
 /* COMMON */
