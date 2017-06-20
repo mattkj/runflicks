@@ -3,9 +3,8 @@
 ## Todo
 
 - add functions for accessing Google Sheets api
-- add video filters
-- use CSS grid layout
-
+- add multiple video filter sections and titles
+- layout Video component
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
