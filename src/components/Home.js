@@ -38,7 +38,8 @@ class Home extends Component {
         return <Thumbnails 
                   key={item.id}
                   id={item.id}
-                  title={item.snippet.title} 
+                  title={item.snippet.title}
+                  channel={item.snippet.channelTitle} 
                   src={src} 
                 />
       });
