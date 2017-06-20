@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Thumbnails({id, title, src}) {
   return(
-    <div>
+    <div className='thumbnail-wrapper'>
       <Link to={{
         pathname: `/video/${id}`,
         search: `?title=${title}`
