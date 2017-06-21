@@ -33,18 +33,18 @@ function parseDuration(PT, format) {
     }
   ];
   for (var i = 0; i < parts.length; i++) {
-    if (typeof matches[parts[i].pos] != 'undefined') {
-      durationInSec += parseInt(matches[parts[i].pos]) * parts[i].multiplier;
+    if (typeof matches[parts[i].pos] !== 'undefined') {
+      durationInSec += parseInt(matches[parts[i].pos], 10) * parts[i].multiplier;
     }
   }
   var totalSec = durationInSec;
   // Hours extraction
   if (durationInSec > 3599) {
-    output.push(parseInt(durationInSec / 3600));
+    output.push(parseInt(durationInSec / 3600, 10));
     durationInSec %= 3600;
   }
   // Minutes extraction with leading zero
-  output.push(('0' + parseInt(durationInSec / 60)).slice(-2));
+  output.push(('0' + parseInt(durationInSec / 60, 10)).slice(-2));
   // Seconds extraction with leading zero
   output.push(('0' + durationInSec % 60).slice(-2));
   if (format === undefined)

@@ -41,8 +41,8 @@ class Home extends Component {
                   key={item.id}
                   id={item.id}
                   title={item.snippet.title}
-                  duration={duration}
                   channel={item.snippet.channelTitle} 
+                  duration={duration}
                   src={src} 
                 />
       });
