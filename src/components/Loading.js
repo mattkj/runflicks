@@ -2,7 +2,7 @@ import React from 'react';
 
 function Loading() {
   return(
-    <div className="content">Loading videos...</div>
+    <div className="loading">Loading videos...</div>
   )
 }
 

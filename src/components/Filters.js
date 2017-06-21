@@ -5,7 +5,7 @@ import {filterList} from '../data';
 const Filters = ({filterVideos}) => {
   const printTitle = (group) => {
     if (group.name){
-      return <h3 key={group.name}>{group.name}</h3>
+      return <div className="filter-group" key={group.name}>{group.name}</div>
     }
   }
 

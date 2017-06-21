@@ -56,9 +56,23 @@ aside{
 }
 
 .filters button{
+  font-family: 'Montserrat', sans-serif;
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.filters button:hover{
+  text-decoration: underline;
+}
+
+.filters button:focus{
+  outline: none;
+}
+
+.filter-group{
+  margin: 15px 0 5px 0;
+  font-size: 1.1em;
 }
 
 .videos{
@@ -75,7 +89,6 @@ aside{
   transition: all 0.2s;
   border-radius: 10px;
   position: relative;
-  cursor: pointer;
 }
 
 .overlay{
@@ -110,12 +123,24 @@ aside{
 
 .thumbnail .info{
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
   text-transform: capitalize;
   font-size: 18px;
   background: rgba(0, 0, 0, 0.5);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.duration{
+  float: right;
+}
+
+.loading{
+  text-align: center;
+  margin-top: 100px;
+  font-weight: 500;
 }
 
 /* COMMON */
@@ -125,7 +150,8 @@ h1{
 }
 
 .active{
-  font-weight: bold;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .video-responsive {

@@ -33,7 +33,7 @@ export const youTube = {
       await init();
       return await gapi.client.youtube.videos.list({
         id,
-        part: 'snippet'
+        part: 'snippet,contentDetails'
       });   
     } catch (error) {
         console.warn('Error: ' + error);

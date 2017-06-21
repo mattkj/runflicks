@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Thumbnails from './Thumbnails';
 import Filters from './Filters';
+import parseDuration from '../utils/parseDuration';
 
 class Home extends Component {
   componentDidMount(){
@@ -35,10 +36,12 @@ class Home extends Component {
       content = videoResults.map(item => {
         const thumbnails = item.snippet.thumbnails;
         const src = (thumbnails.maxres ? thumbnails.maxres.url : thumbnails.medium.url);
+        const duration = parseDuration(item.contentDetails.duration);
         return <Thumbnails 
                   key={item.id}
                   id={item.id}
                   title={item.snippet.title}
+                  duration={duration}
                   channel={item.snippet.channelTitle} 
                   src={src} 
                 />
