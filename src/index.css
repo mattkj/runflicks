@@ -33,6 +33,11 @@ header h1{
   letter-spacing: 2px;
 }
 
+header a{
+  color: #333;
+  text-decoration: none;
+}
+
 .main{
   display: flex;
   flex: 1;
