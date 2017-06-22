@@ -15,6 +15,10 @@ class Home extends Component {
     this.highlightCurrentFilter();
   }
 
+  handleScroll(e){
+    console.log(this.sidebar);
+  }
+
   highlightCurrentFilter(){
     const buttons = document.querySelectorAll('.filters > button');
     buttons.forEach(button => {
@@ -49,8 +53,8 @@ class Home extends Component {
     }
 
     return (
-      <div className="main">
-        <aside>
+      <div className="main" onClick={(e) => this.handleScroll(e)}>
+        <aside ref={(aside) => this.sidebar = aside }>
           <Filters filterVideos={this.props.filterVideos}  />
         </aside>
         <div className="videos">
