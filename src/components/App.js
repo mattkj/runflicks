@@ -6,6 +6,7 @@ import Header from './Header';
 import Home from './Home';
 import About from './About';
 import Video from './Video';
+import shuffleArray from '../utils/shuffleArray';
 
 class App extends Component {
   constructor(){
@@ -20,7 +21,9 @@ class App extends Component {
 
   async filterVideos(filter){
     let videos = data;
-    if (filter !== defaultFilter){
+    if (filter === defaultFilter){
+      shuffleArray(videos);
+    } else {
       videos = videos.filter(video => video.tags.includes(filter));
     }
     videos = videos.map(video => {
