@@ -86,7 +86,8 @@ aside{
 }
 
 .videos{
-  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .videos a{
@@ -99,6 +100,7 @@ aside{
   transition: all 0.2s;
   border-radius: var(--border-radius);
   position: relative;
+  flex: 1 1 600px;
 }
 
 .overlay{
@@ -114,7 +116,7 @@ aside{
 
 .thumbnail{
   width: 100%;
-  height: 600px;
+  height: 400px;
   background-size: cover;
   background-position: center;
   display: flex;
