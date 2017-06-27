@@ -47,6 +47,7 @@ header a{
 
 .main{
   display: flex;
+  flex: 1;
 }
 
 .main img{
@@ -98,6 +99,7 @@ aside{
 }
 
 .videos{
+  align-self: flex-start;
   width: 100%;
   padding: 20px;
   display: grid;
