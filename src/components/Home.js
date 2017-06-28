@@ -54,7 +54,7 @@ class Home extends Component {
         <aside>
           <Filters filterVideos={this.props.filterVideos}  />
           <div className='credits'>
-            Made by Matt J
+            Made by <a href='https://github.com/mattkj'>Matt J</a>
           </div>
         </aside>
         <div className="videos">
