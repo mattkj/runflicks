@@ -4,6 +4,7 @@ import Loading from './Loading';
 import Thumbnails from './Thumbnails';
 import Filters from './Filters';
 import parseDuration from '../utils/parseDuration';
+import '../utils/nodeListPolyfill';
 
 class Home extends Component {
   componentDidMount(){

@@ -3,8 +3,7 @@
 ## Todo
 
 - add functions for accessing Google Sheets api
-- add multiple video filter sections and titles
-- layout Video component
+- use @support (display: grid), add flexbox fallback for IE Edge
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
