@@ -1,10 +1,15 @@
 # RunFlicks
 
-A curated collection of running videos. Built with React and the YouTube API.
+A collection of high quality running videos.
+
+Built with JavaScript, React and the YouTube API.
+
+Layout utilizes CSS custom properties (variables), Flexbox and Grid layout.
 
 ## Todo
 
-- add functions for accessing Google Sheets api
 - use @support (display: grid), add flexbox fallback for IE Edge
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+- finalize videos and filters
+- create 404 route/component
+- setup custom domain name
+- set max width of responsive video embed
