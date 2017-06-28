@@ -14,4 +14,5 @@ Layout utilizes CSS custom properties (variables), Flexbox and Grid layout.
 - setup custom domain name
 - set max width of responsive video embed
 - update package.json & manifest.json info
-- add build task to package.json with surge commands (https://medium.com/@Jeff_Duke_io/how-to-deploy-an-app-using-react-and-react-router4-fe5f02a27a97)
+- add 'deploy' task to package.json with surge commands
+  (https://medium.com/@Jeff_Duke_io/how-to-deploy-an-app-using-react-and-react-router4-fe5f02a27a97)
