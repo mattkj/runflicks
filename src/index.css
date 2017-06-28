@@ -4,6 +4,7 @@
   --text-color: #333;
   --border-color: #e1e1e1;
   --video-min-width: 600px;
+  --thumbnail-height: 300px;
 }
 
 *{
@@ -116,7 +117,7 @@ aside{
   transition: all 0.2s;
   border-radius: var(--border-radius);
   position: relative;
-  max-height: 300px;
+  max-height: var(--thumbnail-height);
 }
 
 .overlay{
@@ -132,7 +133,7 @@ aside{
 
 .thumbnail{
   width: 100%;
-  height: 300px;
+  height: var(--thumbnail-height);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -195,6 +196,7 @@ h1{
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
+  border-radius: var(--border-radius);
 }
 
 .video-responsive iframe {
@@ -230,6 +232,7 @@ h1{
 
 @media (max-width: 480px){
   .videos{
+    --thumbnail-height: 200px;
     --video-min-width: 320px;
   }
 }
@@ -237,9 +240,6 @@ h1{
 @media (max-width: 320px) {
   header{
     font-size: .9em;
-  }
-  .thumbnail{
-    height: 200px;
   }
   .info, .video h3{
     font-size: .7em;
