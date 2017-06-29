@@ -10,5 +10,3 @@ Layout utilizes CSS custom properties (variables), Flexbox and Grid layout.
 
 - use @support (display: grid), add flexbox fallback for IE Edge
 - finalize videos and filters
-- setup custom domain name
-- add loading animation
