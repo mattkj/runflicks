@@ -8,8 +8,10 @@ function Video({match, location}) {
 
   return(
     <div className='video'>
-      <div className='video-responsive'>
-        <iframe width="640" height="360" src={`https://www.youtube.com/embed/${match.params.id}?rel=0&showinfo=0&autoplay=1`} title={title} frameBorder="0" allowFullScreen></iframe>
+      <div className='video-wrapper'>
+        <div className='video-responsive'>
+          <iframe width="640" height="360" src={`https://www.youtube.com/embed/${match.params.id}?rel=0&showinfo=0&autoplay=1`} title={title} frameBorder="0" allowFullScreen></iframe>
+        </div>
       </div>
       <h3>{title}</h3>
     </div>

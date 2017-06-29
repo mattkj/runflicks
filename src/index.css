@@ -175,6 +175,11 @@ aside{
   margin: 20px;
 }
 
+.video-wrapper{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .video h3{
   font-weight: var(--bold-weight);
   text-align: center;
