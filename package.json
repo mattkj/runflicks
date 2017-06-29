@@ -1,6 +1,6 @@
 {
-  "name": "youtube-api",
-  "version": "0.1.0",
+  "name": "runflicks",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "google-client-api": "^1.0.4",
@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && mv build/index.html build/200.html && surge build runflicks.surge.sh",
     "eject": "react-scripts eject"
   }
 }
