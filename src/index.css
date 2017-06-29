@@ -2,6 +2,7 @@
   --border-radius: 10px;
   --bold-weight: 500;
   --text-color: #333;
+  --link-color: #006B90;
   --border-color: #e1e1e1;
   --video-min-width: 600px;
   --thumbnail-height: 300px;
@@ -75,6 +76,7 @@ aside{
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--link-color);
 }
 
 .filters button:hover{
@@ -100,7 +102,7 @@ aside{
 }
 
 .credits a{
-  color: var(--text-color);
+  color: var(--link-color);
   font-weight: var(--bold-weight);
 }
 
