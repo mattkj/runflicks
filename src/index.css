@@ -111,10 +111,27 @@ aside{
   padding: 20px;
 }
 
-.videos{
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill,minmax(var(--video-min-width), 1fr));
+
+@supports (display: grid){
+  .videos{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(var(--video-min-width), 1fr));
+  }
+}
+
+@supports not (display: grid){
+  .videos-wrapper{
+    padding: 0;
+  }
+  .videos{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail-wrapper{
+    flex: 1 1 400px;
+    margin: 10px;
+  }
 }
 
 .thumbnail-wrapper a{
