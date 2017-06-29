@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && mv build/index.html build/200.html && surge build runflicks.surge.sh",
+    "deploy": "npm run build && mv build/index.html build/200.html && surge build runflicks.com",
     "eject": "react-scripts eject"
   }
 }
