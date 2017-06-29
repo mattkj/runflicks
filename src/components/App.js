@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {youTube} from '../utils/gapi';
 import {data, defaultFilter} from '../data';
 import Header from './Header';
 import Home from './Home';
-import About from './About';
 import Video from './Video';
 import shuffleArray from '../utils/shuffleArray';
 
@@ -43,9 +42,11 @@ class App extends Component {
         <Router>
           <div className="container">
             <Header />
-            <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
-            <Route path='/about' component={About} />
-            <Route path='/video/:id' component={Video} />
+            <Switch>
+              <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
+              <Route path='/video/:id' component={Video} />
+              <Route render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
+            </Switch>
           </div>
         </Router>
     );
