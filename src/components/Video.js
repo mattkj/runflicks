@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 
@@ -14,6 +15,7 @@ function Video({match, location}) {
         </div>
       </div>
       <h3>{title}</h3>
+      <Footer />
     </div>
   )
 }

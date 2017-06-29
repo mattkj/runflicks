@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Thumbnails from './Thumbnails';
 import Filters from './Filters';
+import Footer from './Footer';
 import parseDuration from '../utils/parseDuration';
 import '../utils/nodeListPolyfill';
 
@@ -53,12 +54,12 @@ class Home extends Component {
       <div className="main">
         <aside>
           <Filters filterVideos={this.props.filterVideos}  />
-          <div className='credits'>
-            Made by <a href='https://github.com/mattkj'>Matt J</a>
-          </div>
         </aside>
-        <div className="videos">
-          {content}
+        <div className='videos-wrapper'>
+          <div className="videos">
+            {content}
+          </div>
+          <Footer />
         </div>
       </div>
     );
