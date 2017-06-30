@@ -4,7 +4,7 @@
   --text-color: #333;
   --link-color: #006B90;
   --border-color: #e1e1e1;
-  --video-min-width: 600px;
+  --video-min-width: 500px;
   --thumbnail-height: 300px;
 }
 
@@ -152,7 +152,7 @@ aside{
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
   transition: opacity .2s;
 }
