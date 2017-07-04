@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {youTube} from '../utils/gapi';
-import {data, defaultFilter} from '../data';
+import {data} from '../data';
 import Header from './Header';
 import Home from './Home';
 import Video from './Video';
 import shuffleArray from '../utils/shuffleArray';
+
+const defaultFilter = 'All';
 
 class App extends Component {
   constructor(){
