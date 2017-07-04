@@ -255,7 +255,7 @@ h1{
   }
   .filters{
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 0;
   }
   .filter-group{
