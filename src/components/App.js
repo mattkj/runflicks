@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import firebase from '../utils/firebase';
 import {youTube} from '../utils/gapi';
 import {data} from '../data';
 import Header from './Header';
@@ -8,6 +9,11 @@ import Video from './Video';
 import shuffleArray from '../utils/shuffleArray';
 
 const defaultFilter = 'All';
+const database = firebase.database().ref('videos');
+
+database.on('value', snapshot => {
+  console.log(snapshot.val());
+});
 
 class App extends Component {
   constructor(){
