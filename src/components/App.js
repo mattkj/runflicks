@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import firebase from '../utils/firebase';
 import {youTube} from '../utils/gapi';
-import {data} from '../data';
 import Header from './Header';
 import Home from './Home';
 import Video from './Video';
 import shuffleArray from '../utils/shuffleArray';
 
+let data = [];
 const defaultFilter = 'All';
 const database = firebase.database().ref('videos');
-
-database.on('value', snapshot => {
-  console.log(snapshot.val());
-});
 
 class App extends Component {
   constructor(){
@@ -26,8 +22,17 @@ class App extends Component {
     this.filterVideos = this.filterVideos.bind(this);
   }
 
+  componentDidMount(){
+    database.once('value').then(snapshot => {
+      data = snapshot.val();
+      this.filterVideos(this.state.currentFilter);
+    });
+  }
+
   async filterVideos(filter){
     let videos = data;
+    if (videos.length === 0) return;
+
     if (filter === defaultFilter){
       shuffleArray(videos);
     } else {
