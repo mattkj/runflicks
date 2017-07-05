@@ -1,23 +1,7 @@
 import React, { Component } from 'react';
-import Loading from './Loading';
 import PropTypes from 'prop-types';
-import firebase from '../utils/firebase';
-
-const database = firebase.database().ref('filterList');
 
 class Filters extends Component{
-  constructor(){
-    super();
-    this.state = {
-      filterList: null
-    }
-  }
-  componentDidMount(){
-    database.once('value').then(snapshot => {
-      const filterList = snapshot.val();
-      this.setState({filterList});
-    });
-  }
 
   printTitle(group) {
     if (group.name){
@@ -33,18 +17,15 @@ class Filters extends Component{
 
   render(){
     let content;
+    const filterList = this.props.filterList;
     const filterVideos = this.props.filterVideos;
 
-    if (!this.state.filterList){
-      return <Loading />;
-    } else {
-      content = this.state.filterList.map(group => {
-        return ([
-          this.printTitle(group),
-          this.printFilters(group, filterVideos)
-        ])
-      })
-    }
+    content = filterList.map(group => {
+      return ([
+        this.printTitle(group),
+        this.printFilters(group, filterVideos)
+      ])
+    })
 
     return(
       <div className='filters'>
@@ -55,6 +36,7 @@ class Filters extends Component{
 }
 
 Filters.propTypes = {
+  filterList: PropTypes.array.isRequired,
   filterVideos: PropTypes.func.isRequired
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 function Loading() {
   return(
     <div className="loading">
-      <div>Loading...</div>
+      <div>Loading videos...</div>
       <div className="spinner">
         <div className="rect1"></div>
         <div className="rect2"></div>

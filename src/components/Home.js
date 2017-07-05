@@ -53,7 +53,7 @@ class Home extends Component {
     return (
       <div className="main">
         <aside>
-          <Filters filterVideos={this.props.filterVideos}  />
+          <Filters filterList={this.props.filterList} filterVideos={this.props.filterVideos}  />
         </aside>
         <div className='videos-wrapper'>
           <div className="videos">

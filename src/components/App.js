@@ -9,7 +9,8 @@ import shuffleArray from '../utils/shuffleArray';
 
 let data = [];
 const defaultFilter = 'All';
-const database = firebase.database().ref('videos');
+const videosRef = firebase.database().ref('videos');
+const filtersRef = firebase.database().ref('filterList');
 
 class App extends Component {
   constructor(){
@@ -17,15 +18,20 @@ class App extends Component {
     this.state = {
       videos: [],
       loading: true,
+      filterList: null,
       currentFilter: defaultFilter
     }
     this.filterVideos = this.filterVideos.bind(this);
   }
 
   componentDidMount(){
-    database.once('value').then(snapshot => {
+    videosRef.once('value').then(snapshot => {
       data = snapshot.val();
       this.filterVideos(this.state.currentFilter);
+    });
+    filtersRef.once('value').then(snapshot => {
+      const filterList = snapshot.val();
+      this.setState({filterList});
     });
   }
 
@@ -56,9 +62,9 @@ class App extends Component {
           <div className="container">
             <Header />
             <Switch>
-              <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
+              <Route exact path='/' render={() => <Home videos={this.state.videos} loading={this.state.loading} filterList={this.state.filterList} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
               <Route path='/video/:id' component={Video} />
-              <Route render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} currentFilter={this.state.currentFilter} />} />
+              <Route render={() => <Home videos={this.state.videos} loading={this.state.loading} filterVideos={this.filterVideos} filterList={this.state.filterList} currentFilter={this.state.currentFilter} />} />
             </Switch>
           </div>
         </Router>
