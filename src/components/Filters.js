@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {filterList} from '../data';
+import {filterList} from '../siteConfig';
 
 const Filters = ({filterVideos}) => {
   const printTitle = (group) => {

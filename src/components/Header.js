@@ -1,5 +1,5 @@
 import React from 'react';
-import {siteName, tagline} from '../data';
+import {siteName, tagline} from '../siteConfig';
 import {Link} from 'react-router-dom';
 
 function Header() {
