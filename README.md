@@ -2,7 +2,9 @@
 
 A collection of inspiring running films.
 
+***
 ![RunFlicks.com screenshot](screenshot.jpg?raw=true "RunFlicks.com screenshot")
+***
 
 Built with [JavaScript](https://babeljs.io/), [React](https://facebook.github.io/react/) and the [YouTube Data API](https://developers.google.com/youtube/v3/).
 Data served from [Firebase](https://firebase.google.com/products/database/).
