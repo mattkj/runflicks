@@ -2,7 +2,7 @@
 
 A collection of inspiring running films.
 
-***
+
 ![RunFlicks.com screenshot](screenshot.jpg?raw=true "RunFlicks.com screenshot")
 ***
 
